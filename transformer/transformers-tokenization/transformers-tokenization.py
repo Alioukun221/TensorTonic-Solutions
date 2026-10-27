@@ -45,6 +45,6 @@ class SimpleTokenizer:
         """
         Returns the decoded, space-separated text.
         """
-        words = [self.id_to_word.get(i,"<UNK>") for i in ids]
+        words = [self.id_to_word.get(i,self.unk_token ) for i in ids]
         text = " ".join(words)
         return text 
