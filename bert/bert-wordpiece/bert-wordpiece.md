@@ -35,27 +35,27 @@ $$
 **While** $\text{start} < n$:
 
 $$
-\text{end} = n, \quad \text{cur\_substr} = \text{None}
+\text{end} = n, \quad \text{curSubstr} = \text{None}
 $$
 
 **While** $\text{start} < \text{end}$:
 
 $$
-\text{substr} = \begin{cases} w[\text{start}:\text{end}] & \text{if } \text{start} = 0 \\ \text{\#\#} + w[\text{start}:\text{end}] & \text{if } \text{start} > 0 \end{cases}
+\text{substr} = \begin{cases} w[\text{start}:\text{end}] & \text{if } \text{start} = 0 \\\\ \texttt{\char35\char35} + w[\text{start}:\text{end}] & \text{if } \text{start} > 0 \end{cases}
 $$
 
 $$
-\text{if } \text{substr} \in V: \quad \text{cur\_substr} = \text{substr}, \quad \text{break}
+\text{if } \text{substr} \in V: \quad \text{curSubstr} = \text{substr}, \quad \text{break}
 $$
 
 $$
 \text{end} = \text{end} - 1
 $$
 
-**If** $\text{cur\_substr}$ is None: return $[\text{[UNK]}]$
+**If** $\text{curSubstr}$ is None: return $[\text{[UNK]}]$
 
 $$
-\text{tokens.append}(\text{cur\_substr}), \quad \text{start} = \text{end}
+\text{tokens.append}(\text{curSubstr}), \quad \text{start} = \text{end}
 $$
 
 **Return** tokens
@@ -138,7 +138,7 @@ Three subword tokenization algorithms dominate modern NLP. They share the goal o
 Consider tokenizing `"unhappiness"` with vocabulary:
 
 $$
-V = \{\text{"un"}, \text{"happy"}, \text{"\#\#happi"}, \text{"\#\#happiness"}, \text{"\#\#ness"}, \text{"\#\#i"}, \text{"\#\#n"}, \text{"\#\#e"}, \text{"\#\#s"}, \text{"a"}, \text{"h"}, \text{"i"}, \text{"n"}, \text{"p"}, \text{"s"}, \text{"u"}, \text{"e"}, \dots\}
+V = \{\text{"un"}, \text{"happy"}, \texttt{"\char35\char35 happi"}, \texttt{"\char35\char35 happiness"}, \texttt{"\char35\char35 ness"}, \texttt{"\char35\char35 i"}, \texttt{"\char35\char35 n"}, \texttt{"\char35\char35 e"}, \texttt{"\char35\char35 s"}, \text{"a"}, \text{"h"}, \text{"i"}, \text{"n"}, \text{"p"}, \text{"s"}, \text{"u"}, \text{"e"}, \dots\}
 $$
 
 **Iteration 1 (start=0):**
